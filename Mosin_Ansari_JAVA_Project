@@ -1,0 +1,105 @@
+import java.applet.*;
+import java.awt.*;
+import java.awt.event.*;
+
+/*<applet code="areaconversion.class" width=500 height=500></applet>*/
+public class areaconversion extends Applet implements ActionListener{
+
+    Font f1;
+    TextField t1 = new TextField(10);
+    TextField t2 = new TextField(10);
+    Label l1 = new Label("Enter area in square meter : ");
+    Label l2 = new Label("Enter area in square centimeter: ");
+    Button b1 = new Button("Convert");
+    Button b2 = new Button("Convert");
+    Button b3 = new Button("Clear All");
+    Label l3 = new Label(" Square meter to square centimeter: ");
+    Label l4 = new Label("Square centimeter to square meter : ");
+    TextField t3 = new TextField(10);
+    TextField t4 = new TextField(10);
+
+    TextField t5 = new TextField(10);
+    TextField t6 = new TextField(10);
+    Label l5 = new Label("Enter area in square foot: ");
+    Label l6 = new Label("Enter area in square inch: ");
+    Button b4 = new Button("Convert");
+    Button b5= new Button("Convert");
+    Button b6 = new Button("Clear All");
+    Label l7 = new Label(" Square foot to square inch: ");
+    Label l8 = new Label("Square inch to square foot : ");
+    TextField t7 = new TextField(10);
+    TextField t8 = new TextField(10);
+    
+    
+
+
+    public void init(){
+        f1=new Font("Arial",Font.BOLD,20);
+        add(l1);
+        add(t1);
+        add(b1);
+        add(l3);
+        add(t3);
+        add(l2);
+        add(t2);
+        add(b2);
+        add(l4);
+        add(t4);
+        add(b3);
+
+	add(l5);
+        add(t5);
+        add(b4);
+        add(l7);
+        add(t7);
+        add(l6);
+        add(t6);
+        add(b5);
+        add(l8);
+        add(t8);
+        add(b6);
+        b1.addActionListener(this);
+        b2.addActionListener(this);
+        b3.addActionListener(this);
+	b4.addActionListener(this);
+        b5.addActionListener(this);
+        b6.addActionListener(this);
+    }
+
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == b1){
+            float a1 = Integer.parseInt(t1.getText());
+            float a2 = (10000*a1);
+            t3.setText(String.valueOf(a2));
+        }
+        if(e.getSource() == b2){
+            float a3 = Integer.parseInt(t2.getText());
+            float a4 = (a3/10000);
+            t4.setText(String.valueOf(a4));
+        }
+        if(e.getSource() == b3){
+            t1.setText(""+0);
+            t2.setText(""+0);
+            t3.setText(""+0);
+            t4.setText(""+0);}
+
+	if(e.getSource() == b4){
+            float a5 = Integer.parseInt(t5.getText());
+            float a6 = (144*a5);
+            t7.setText(String.valueOf(a6));
+        }
+        if(e.getSource() == b5){
+            float a7 = Integer.parseInt(t6.getText());
+            float a8 = (a7/144);
+            t8.setText(String.valueOf(a8));
+        }
+        if(e.getSource() == b6){
+            t5.setText(""+0);
+            t6.setText(""+0);
+            t7.setText(""+0);
+            t8.setText(""+0);}
+      }
+}
